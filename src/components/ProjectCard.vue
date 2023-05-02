@@ -1,12 +1,18 @@
 <template>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{ project.title }}</h5>
-        <p class="card-text">{{ project.customer }}</p>
-        <p class="card-text">{{ project.description }}</p>
-        <p class="card-text">{{ project.url }}</p>
-        <p class="card-text">{{ project.status }}</p>
-      </div>
+    <div class="container">
+        <div class="row flex-row">
+            <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Titolo: {{ project.title }}</h5>
+                    <p class="card-text">Cliente: {{ project.customer }}</p>
+                    <p class="card-text">Descrizione: {{ project.description }}</p>
+                    <p class="card-text">URL: {{ project.url }}</p>
+                    <p class="card-text">Stato: {{ project.status }}</p>
+                  </div>
+                </div>
+            </div>
+        </div>
     </div>
   </template>
   
@@ -24,6 +30,7 @@
   <style scoped>
   .card {
     margin-bottom: 20px;
+    width: 100%;
   }
   </style>
   
