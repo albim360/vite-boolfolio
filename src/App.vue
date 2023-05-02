@@ -24,9 +24,10 @@ export default {
   },
   mounted() {
     axios.get('http://127.0.0.1:8000/api/projects').then(response => {
-      console.log(response.data)
-    })
-
+      this.projects = response.data.data;
+    }).catch(error => {
+      console.log(error);
+    });
   },
 };
 </script>

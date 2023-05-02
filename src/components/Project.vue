@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="project in projects" :key="project.id">{{ project.title }}</li>
+      <li v-for="project in projects" :key="project.id">{{ project.name }}</li>
     </ul>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
       projects: []
     };
   },
-  created() {
+  mounted() {
     axios.get('http://127.0.0.1:8000/api/projects')
       .then(response => {
         this.projects = response.data.data;
