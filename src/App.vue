@@ -1,34 +1,17 @@
 <template>
-  <div class="container">
-    <h1>Projects</h1>
-    <div class="row">
-      <div class="col-md-4" v-for="project in projects" :key="project.id">
-        <project-card :project="project"></project-card>
-      </div>
-    </div>
+  <div>
+    <navbar></navbar>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import ProjectCard from './components/ProjectCard.vue';
+import Navbar from './components/Navbar.vue';
 
 export default {
   components: {
-    ProjectCard,
-  },
-  data() {
-    return {
-      projects: [],
-    };
-  },
-  mounted() {
-    axios.get('http://127.0.0.1:8000/api/projects').then(response => {
-      this.projects = response.data.data;
-    }).catch(error => {
-      console.log(error);
-    });
-  },
+    Navbar
+  }
 };
 </script>
 
