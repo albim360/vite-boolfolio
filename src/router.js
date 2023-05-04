@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './components/Home.vue'
 import About from './components/About.vue'
 import ProjectCard from './components/ProjectCard.vue'
-import axios from 'axios';
+import ProjectDetail from './components/ProjectDetail.vue'
 
 const routes = [
   {
@@ -42,6 +42,12 @@ const routes = [
           })
       }
     }
+  },
+  {
+    path: '/projects/:id',
+    name: 'ProjectDetail',
+    component: ProjectDetail,
+    props: true
   },
   {
     path: '/about',
